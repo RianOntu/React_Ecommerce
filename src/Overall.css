@@ -1,0 +1,65 @@
+body,#root{
+    height:100%;
+}
+body{
+    font-family: '../src/assets/BarlowCondensed-Regular.ttf';
+    overflow: hidden;
+    
+}
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0; 
+}
+
+.divider-text {
+    padding: 0 10px;
+    color: #787878; 
+    font-size: 14px; 
+    white-space: nowrap;
+}
+.furni_flex_icon{
+  
+    top: 35%;  
+    left: 50%; 
+    width: 200px;
+}
+.furni_flex_icon img{
+    display: flex;
+    margin-left: auto;
+    margin-right:auto;
+}
+.furni{
+    margin-left: auto;
+    display: flex;
+    padding: 0px;
+    width: 162px;
+    margin-right: auto;
+}
+.signup_description{
+    
+    top: 50%;  
+    left: 50%; 
+    width: 300px;
+}
+.signup_description h4{
+    display: flex;
+    margin-left: auto;
+    margin-right:auto;
+}
+.signup_description_wrapper{
+    top: 52%;
+    left: 46%;
+}
+.cursor{
+    padding-top:21px; 
+    line-height: 1.5;  
+}
