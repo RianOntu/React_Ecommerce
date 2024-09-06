@@ -32,10 +32,11 @@ function SignUpForm() {
      </div>
      <div className="email_input_div justify-center flex mt-[15px] w-[100%] relative">
      <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="password" name="" id="" />
+    <a href=""><h6 className='text-[#70BDF6] absolute top-0 forgot_password top-[54px] right-[0px]'>Forgot Password?</h6></a>
      <h6 className='text-[#C0C0C0] absolute top-0 left-[11px]'>Password</h6>
      <img className='absolute top-[17px] right-[15px]' src={visibility_off} style={{width:"20px",height:"20px"}} alt="" />
      </div>
-     <div className="tickdiv mt-3 flex  gap-x-0.5">
+     <div className="tickdiv mt-5 flex  gap-x-0.5">
      <input type="checkbox" class=" cursor" />
      <h4 className='text-start ml-2' style={{fontWeight:"700"}}>I agree to the <a href=""><u>Terms and Policy</u></a></h4>
      </div>

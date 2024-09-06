@@ -8,6 +8,7 @@ import {
 import SignUpForm from './SignUpForm.jsx';
 import SignInForm from './SignInForm.jsx';
 import MainContainer from './MainContainer.jsx';
+import Products from './Products.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<SignUpForm/>
+      },
+      {
+        path:'/products',
+        element:<Products/>
       }
     ]
   },

@@ -1,0 +1,375 @@
+{
+"chairs":[
+    {
+        "id": 1,
+        "name": "Classic Wooden Rocking Chair",
+        "image": "./assets/rocking1.png",  
+        "price": 120,
+        "percent_off": 15,
+        "main_price": 141.18,
+        "type": "rocking chair",
+        "description": "A timeless wooden rocking chair with a sturdy build and natural finish. Perfect for relaxing on the porch or indoors."
+      },
+      {
+        "id": 2,
+        "name": "Modern Upholstered Rocker",
+        "image": "./assets/rocking2.png",  
+        "price": 180,
+        "percent_off": 10,
+        "main_price": 200,
+        "type": "rocking chair",
+        "description": "This modern rocker features plush upholstery and sleek metal legs, adding style to any contemporary space."
+      },
+      {
+        "id": 3,
+        "name": "Outdoor Patio Rocking Chair",
+        "image": "./assets/rocking3.png",  
+        "price": 99,
+        "percent_off": 20,
+        "main_price": 123.75,
+        "type": "rocking chair",
+        "description": "Made from weather-resistant materials, this rocking chair is perfect for outdoor settings like gardens or patios."
+      },
+      {
+        "id": 4,
+        "name": "Vintage Rocking Chair",
+        "image": "./assets/rocking4.png",  
+        "price": 150,
+        "percent_off": 25,
+        "main_price": 200,
+        "type": "rocking chair",
+        "description": "A vintage rocking chair with intricate carvings that brings a touch of elegance and nostalgia to any room."
+      },
+      {
+        "id": 5,
+        "name": "Comfort Reclining Rocker",
+        "image": "./assets/rocking5.png",  
+        "price": 230,
+        "percent_off": 12,
+        "main_price": 261.36,
+        "type": "rocking chair",
+        "description": "Featuring a reclining backrest and extra padding, this rocker is designed for ultimate comfort and relaxation."
+      },
+      {
+        "id": 6,
+        "name": "Minimalist Rocking Chair",
+        "image": "./assets/rocking6.jpg",  
+        "price": 110,
+        "percent_off": 18,
+        "main_price": 134.15,
+        "type": "rocking chair",
+        "description": "A sleek and minimalist design with a simple yet stylish look, perfect for modern and minimalist interiors."
+      },
+      {
+        "id": 7,
+        "name": "Ergonomic Rocking Chair",
+        "image": "./assets/rocking7.jpg",  
+        "price": 205,
+        "percent_off": 15,
+        "main_price": 241.18,
+        "type": "rocking chair",
+        "description": "Designed for comfort, this ergonomic rocking chair offers excellent support, making it ideal for prolonged use."
+      },
+      {
+        "id": 8,
+        "name": "Rattan Rocking Chair",
+        "image": "./assets/rocking8.jpg",  
+        "price": 95,
+        "percent_off": 10,
+        "main_price": 105.56,
+        "type": "rocking chair",
+        "description": "With a cozy and natural look, this rattan rocking chair adds a rustic touch to any home decor."
+      },
+      {
+        "id": 9,
+        "name": "Elegant Wooden Rocker",
+        "image": "./assets/rocking9.jpg",  
+        "price": 175,
+        "percent_off": 14,
+        "main_price": 203.49,
+        "type": "rocking chair",
+        "description": "Crafted from high-quality wood, this elegant rocker features a smooth finish that enhances any space."
+      },
+      {
+        "id": 10,
+        "name": "Cozy Nursery Rocking Chair",
+        "image": "./assets/rocking10.jpg",  
+        "price": 140,
+        "percent_off": 22,
+        "main_price": 179.49,
+        "type": "rocking chair",
+        "description": "Ideal for nurseries, this cozy chair offers comfort for parents and babies with its soft fabric and gentle rocking."
+      },
+      {
+        "id": 11,
+        "name": "Foldable Rocking Chair",
+        "image": "./assets/rocking11.jpg",  
+        "price": 80,
+        "percent_off": 20,
+        "main_price": 100,
+        "type": "rocking chair",
+        "description": "This foldable rocking chair is easy to store and transport, making it perfect for camping or small spaces."
+      },
+      {
+        "id": 12,
+        "name": "Luxurious Leather Rocker",
+        "image": "./assets/rocking12.jpg",  
+        "price": 260,
+        "percent_off": 18,
+        "main_price": 317.07,
+        "type": "rocking chair",
+        "description": "A luxurious rocker with premium leather upholstery and a sturdy frame, combining comfort and elegance."
+      },
+      
+        {
+          "id": 13,
+          "name": "Classic Wooden Side Chair",
+          "image": "./assets/side1.jpg",  
+          "price": 85,
+          "percent_off": 10,
+          "main_price": 94.44,
+          "type": "side chair",
+          "description": "A simple yet elegant wooden side chair with a natural finish, perfect for dining rooms or living spaces."
+        },
+        {
+          "id": 14,
+          "name": "Modern Upholstered Side Chair",
+          "image": "./assets/side2.jpg",  
+          "price": 120,
+          "percent_off": 15,
+          "main_price": 141.18,
+          "type": "side chair",
+          "description": "Features soft upholstery and a sleek design, adding a contemporary touch to any room."
+        },
+        {
+          "id": 15,
+          "name": "Metal Frame Side Chair",
+          "image": "./assets/side3.jpg",  
+          "price": 75,
+          "percent_off": 20,
+          "main_price": 93.75,
+          "type": "side chair",
+          "description": "A durable side chair with a metal frame and minimalist design, suitable for both indoor and outdoor use."
+        },
+        {
+          "id": 16,
+          "name": "Scandinavian Style Side Chair",
+          "image": "./assets/side4.jpg",  
+          "price": 130,
+          "percent_off": 18,
+          "main_price": 158.54,
+          "type": "side chair",
+          "description": "Combines clean lines and light wood for a Nordic-inspired look, ideal for modern homes."
+        },
+        {
+          "id": 17,
+          "name": "Vintage Leather Side Chair",
+          "image": "./assets/side5.jpg",  
+          "price": 190,
+          "percent_off": 12,
+          "main_price": 215.91,
+          "type": "side chair",
+          "description": "A vintage-inspired side chair with rich leather upholstery and a sturdy wooden frame."
+        },
+        {
+          "id": 18,
+          "name": "Plastic Molded Side Chair",
+          "image": "./assets/side6.jpg",  
+          "price": 60,
+          "percent_off": 10,
+          "main_price": 66.67,
+          "type": "side chair",
+          "description": "Lightweight and stackable, this chair is made from durable plastic, perfect for casual settings."
+        },
+        {
+          "id": 19,
+          "name": "Tufted Fabric Side Chair",
+          "image": "./assets/side7.jpg",  
+          "price": 145,
+          "percent_off": 14,
+          "main_price": 168.60,
+          "type": "side chair",
+          "description": "Offers a luxurious touch with tufted fabric and a padded seat, ideal for adding elegance to any room."
+        },
+        {
+          "id": 20,
+          "name": "Mid-Century Modern Side Chair",
+          "image": "./assets/side8.jpg",  
+          "price": 110,
+          "percent_off": 15,
+          "main_price": 129.41,
+          "type": "side chair",
+          "description": "A stylish mid-century modern chair with a comfortable seat and sleek wooden legs."
+        },
+        {
+          "id": 21,
+          "name": "Industrial Style Side Chair",
+          "image": "./assets/side9.jpg",  
+          "price": 95,
+          "percent_off": 12,
+          "main_price": 107.95,
+          "type": "side chair",
+          "description": "Combines metal and wood for an industrial look, perfect for lofts or urban apartments."
+        },
+        {
+          "id": 22,
+          "name": "Farmhouse Side Chair",
+          "image": "./assets/side10.jpg",  
+          "price": 130,
+          "percent_off": 10,
+          "main_price": 144.44,
+          "type": "side chair",
+          "description": "A charming farmhouse side chair with a rustic finish, ideal for country-style kitchens or dining rooms."
+        },
+        {
+          "id": 23,
+          "name": "Contemporary Plastic Side Chair",
+          "image": "./assets/side11.jpg",  
+          "price": 70,
+          "percent_off": 20,
+          "main_price": 87.50,
+          "type": "side chair",
+          "description": "Features a modern design with durable plastic construction, suitable for contemporary spaces."
+        },
+        {
+          "id": 24,
+          "name": "Retro Side Chair",
+          "image": "./assets/side12.jpg",  
+          "price": 105,
+          "percent_off": 15,
+          "main_price": 123.53,
+          "type": "side chair",
+          "description": "A retro-inspired side chair with vibrant colors and a classic design, adding a playful touch to any room."
+        },
+       
+          {
+            "id": 25,
+            "name": "Luxury Leather Lounge Chair",
+            "image": "./assets/lounge1.jpg",  
+            "price": 350,
+            "percent_off": 15,
+            "main_price": 411.76,
+            "type": "lounge chair",
+            "description": "A luxurious leather lounge chair with a reclining feature, perfect for relaxing after a long day."
+          },
+          {
+            "id": 26,
+            "name": "Modern Fabric Lounge Chair",
+            "image": "./assets/lounge2.jpg",  
+            "price": 200,
+            "percent_off": 10,
+            "main_price": 222.22,
+            "type": "lounge chair",
+            "description": "Features a modern design with soft fabric upholstery and a sleek metal base."
+          },
+          {
+            "id": 27,
+            "name": "Mid-Century Lounge Chair",
+            "image": "./assets/lounge3.jpg",  
+            "price": 250,
+            "percent_off": 20,
+            "main_price": 312.50,
+            "type": "lounge chair",
+            "description": "A mid-century lounge chair with a vintage design and comfortable cushioning."
+          },
+          {
+            "id": 28,
+            "name": "Reclining Outdoor Lounge Chair",
+            "image": "./assets/lounge4.jpg",  
+            "price": 180,
+            "percent_off": 12,
+            "main_price": 204.55,
+            "type": "lounge chair",
+            "description": "Designed for outdoor use, this reclining lounge chair is perfect for enjoying sunny days."
+          },
+          {
+            "id": 29,
+            "name": "Retro Lounge Chair",
+            "image": "./assets/lounge5.jpg",  
+            "price": 220,
+            "percent_off": 18,
+            "main_price": 268.29,
+            "type": "lounge chair",
+            "description": "A retro lounge chair with vibrant upholstery and a unique design that adds character to any room."
+          },
+          {
+            "id": 30,
+            "name": "Scandinavian Lounge Chair",
+            "image": "./assets/lounge6.jpg",  
+            "price": 240,
+            "percent_off": 15,
+            "main_price": 282.35,
+            "type": "lounge chair",
+            "description": "Combines clean lines and natural materials for a minimalist look, ideal for modern interiors."
+          },
+          {
+            "id": 31,
+            "name": "Elegant Velvet Lounge Chair",
+            "image": "./assets/lounge7.jpg",  
+            "price": 300,
+            "percent_off": 10,
+            "main_price": 333.33,
+            "type": "lounge chair",
+            "description": "A plush velvet lounge chair that adds a touch of elegance and sophistication to any space."
+          },
+          {
+            "id": 32,
+            "name": "Foldable Lounge Chair",
+            "image": "./assets/lounge8.jpg",  
+            "price": 140,
+            "percent_off": 20,
+            "main_price": 175.00,
+            "type": "lounge chair",
+            "description": "A convenient foldable lounge chair that is perfect for easy storage and portability."
+          },
+          {
+            "id": 33,
+            "name": "Contemporary Lounge Chair",
+            "image": "./assets/lounge9.jpg",  
+            "price": 275,
+            "percent_off": 12,
+            "main_price": 312.50,
+            "type": "lounge chair",
+            "description": "Features a sleek and stylish design with high-quality upholstery, suitable for modern decor."
+          },
+          {
+            "id": 34,
+            "name": "Chic Rattan Lounge Chair",
+            "image": "./assets/lounge10.jpg",  
+            "price": 160,
+            "percent_off": 15,
+            "main_price": 188.24,
+            "type": "lounge chair",
+            "description": "Made from durable rattan, this lounge chair combines comfort with a chic, natural look."
+          },
+          {
+            "id": 35,
+            "name": "Plush Recliner Lounge Chair",
+            "image": "./assets/lounge11.jpg",  
+            "price": 320,
+            "percent_off": 10,
+            "main_price": 355.56,
+            "type": "lounge chair",
+            "description": "A plush recliner with deep cushioning and a reclining feature, perfect for relaxation and comfort."
+          },
+          {
+            "id": 36,
+            "name": "Art Deco Lounge Chair",
+            "image": "./assets/lounge12.jpg",  
+            "price": 290,
+            "percent_off": 18,
+            "main_price": 353.66,
+            "type": "lounge chair",
+            "description": "An Art Deco-inspired lounge chair with bold lines and luxurious fabrics for a glamorous touch."
+          }
+        
+        
+      
+      
+]
+}
+ 
+   
+  
+  
+  

@@ -63,3 +63,27 @@ body{
     padding-top:21px; 
     line-height: 1.5;  
 }
+.active{
+    background-color: #F2F2F2;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+.active1{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-color: #0E0E0E;
+    color:white;
+}
+.padding{
+    padding-top: 5px!important;
+    padding-bottom: 5px!important;
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    border-radius: 5px!important;
+}
