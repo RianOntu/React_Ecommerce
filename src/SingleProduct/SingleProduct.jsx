@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import CartContext from '../Cart/CartProvider';
 
 
 
-const SingleProduct=React.memo(({product}) =>{
-  
+const SingleProduct=React.memo(({product,products}) =>{
+  const {addToCart}=useContext(CartContext);
   
   const price = product.price;
   const percentOff = product.percent_off;
@@ -12,7 +13,7 @@ const SingleProduct=React.memo(({product}) =>{
   console.log('percentOff ',percentOff );
   console.log('discountedPrice',discountedPrice);
   
-  
+ 
   
     
     return (
@@ -33,7 +34,7 @@ const SingleProduct=React.memo(({product}) =>{
       </div>
 
     <div className="flex justify-center">
-    <a onClick={addToCart} href={`/${product.id}`} className='bg-[#000000] w-[210px] text-white justify-center w-full py-[5px] px-[10px] flex gap-x-[8px] rounded-[10px] items-center'><i class="fa-solid fa-cart-shopping"></i>Add To Cart</a>
+    <a style={{cursor:"pointer"}} onClick={()=>addToCart(product)}  className='bg-[#000000] w-[210px] text-white justify-center w-full py-[5px] px-[10px] flex gap-x-[8px] rounded-[10px] items-center'><i class="fa-solid fa-cart-shopping"></i>Add To Cart</a>
     </div>
    
     

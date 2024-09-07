@@ -26,7 +26,7 @@ function AllProducts() {
 <div className='grid mx-auto lg:mt-4 md:mx-auto lg:mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-x-[15px] gap-y-[20px] container z-10'>
            { products.map(product=>(
                 
-                <SingleProduct key={product.id} product={product}/>
+                <SingleProduct key={product.id} product={product} products={products}/>
                 
                 
             ))}

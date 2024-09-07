@@ -12,6 +12,7 @@ import ProductProvider from './ContextAPI/ProductProvider.jsx';
 import ProductHome from './ProductHome/ProductHome.jsx';
 import Cart from './Cart/Cart.jsx';
 import AuthenticationProvider from './ContextAPI/AuthenticationProvider.jsx';
+import { CartProvider } from './Cart/CartProvider.jsx';
 
 
 const router = createBrowserRouter([
@@ -44,7 +45,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthenticationProvider>
     <ProductProvider>
+      <CartProvider>
     <RouterProvider router={router} />
+    </CartProvider>
     </ProductProvider>
     </AuthenticationProvider>
   </StrictMode>

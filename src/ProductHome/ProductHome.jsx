@@ -17,7 +17,7 @@ function ProductHome() {
         <div>
          
         {   
-           isLoading?(<h1 className='center-container'>
+           isLoading?(<h1 className='center-container text-[50px]'>
             Loading...
            </h1>
 

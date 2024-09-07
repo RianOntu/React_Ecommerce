@@ -3,11 +3,19 @@ import product_page_logo from '../assets/product_page_logo.png'
 import sign_up_icon from '../assets/sign_up_icon.png'
 import ActiveLink from '../ActiveLink/ActiveLink'
 import { AuthenticationContext } from '../ContextAPI/AuthenticationProvider';
+import CartContext from '../Cart/CartProvider';
+import ProductContext from '../ContextAPI/ProductsContext';
 
 
 function ProductHeader() {
     const {user}=useContext(AuthenticationContext);
-    console.log(user);
+    const {cart}=useContext(CartContext)
+    const {products}=useContext(ProductContext)
+   
+    const totalProduct=cart.map(item=>{
+        products.map(product=>item.id==product.id)
+    })
+    console.log(totalProduct);
     
     return (
         <>
@@ -24,9 +32,13 @@ function ProductHeader() {
         
         <div className="flex gap-x-[25px] items-center">
         <ActiveLink to='/cart'>
-        <i class="fa-solid fa-cart-shopping"></i>
+        <div className="relative">
+        <i class="fa-solid fa-cart-shopping text-[30px]" ></i>
+        <div className='absolute top-[-10px] text-white bg-[#DD2334] w-[20px] h-[20px] rounded-[50%]'><p style={{fontSize:"15px",display:"flex",justifyContent:"center"}}>{totalProduct.length}</p></div>
+        </div>
+        
         </ActiveLink>
-        <img src={user.photoURL} style={{width:"30px",height:"30px"}} className='rounded-[50%]' alt="" />
+        <img src={user?.photoURL} style={{width:"30px",height:"30px"}} className='rounded-[50%]' alt="" />
         </div>
         
         </div>
