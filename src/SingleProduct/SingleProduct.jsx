@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-function SingleProduct({product}) {
+const SingleProduct=React.memo(({product}) =>{
   
   
   const price = product.price;
@@ -33,13 +33,13 @@ function SingleProduct({product}) {
       </div>
 
     <div className="flex justify-center">
-    <button className='bg-[#000000] w-[85%] text-white justify-center w-full py-[5px] px-[10px] flex gap-x-[8px] rounded-[10px] items-center'><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>
+    <button className='bg-[#000000] w-[210px] text-white justify-center w-full py-[5px] px-[10px] flex gap-x-[8px] rounded-[10px] items-center'><i class="fa-solid fa-cart-shopping"></i>Add To Cart</button>
     </div>
    
     
   </div>
         </>
     )
-}
+})
 
 export default SingleProduct

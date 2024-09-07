@@ -3,10 +3,13 @@ import ProductsContext from '../ContextAPI/ProductsContext'
 import SingleProduct from '../SingleProduct/SingleProduct';
 import ProductHome from '../ProductHome/ProductHome';
 import Sidebar from '../SideBar/SideBar';
+import Pagination from 'react-js-pagination';
+import './Pagination.css'
+
 
 
 function AllProducts() {
-    const products=useContext(ProductsContext);
+    const { products, handlePageChange, currentPage, totalProducts }=useContext(ProductsContext);
     console.log('all products rendering...');
     
     
@@ -30,6 +33,17 @@ function AllProducts() {
             </div>
 </div>
 </div>
+<Pagination
+        activePage={currentPage}
+        itemsCountPerPage={6}
+        totalItemsCount={totalProducts}
+        pageRangeDisplayed={5}
+        onChange={handlePageChange}
+        itemClass="pagination-item" 
+        linkClass="pagination-link" 
+        activeClass="active" 
+        disabledClass="disabled" 
+      />
         
        
         

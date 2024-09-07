@@ -3,6 +3,16 @@ import ActiveLinkOne from './ActiveLinkOne';
 
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+     
+      const timer = setTimeout(() => {
+          setIsLoading(false);
+      }, 2000);
+
+     
+      return () => clearTimeout(timer);
+  }, []);
 
   const ToggleSidebar = () => {
     setIsOpen(prevIsOpen => !prevIsOpen);
@@ -49,21 +59,24 @@ function Sidebar() {
                 
             
           </div>
-       
-          <div className="bg-white p-6 hidden md:flex lg:flex  md:flex-col md:w-52 inset-y-0  shadow-md sm:h-full sm:overflow-y-auto fixed md:top-[80px] z-index">
+          {
+            isLoading?<h1 className='center-container'>Loading...</h1>:<div className="bg-white p-6 hidden md:flex lg:flex  md:flex-col md:w-52 inset-y-0  shadow-md sm:h-full sm:overflow-y-auto fixed md:top-[80px] z-index">
          
-          <ActiveLinkOne className='padding p-6 mt-20 text-[#9F9EA6]' to="/products">Rocking Chair</ActiveLinkOne><br />
-          <hr /><br />
-             <ActiveLinkOne className='padding p-6 text-[#9F9EA6]' to="/side-chair">Side Chair</ActiveLinkOne><br />
-             <hr /><br />
-             <ActiveLinkOne className='padding p-6 text-[#9F9EA6]' to="/lounge-chair">Lounge Chair</ActiveLinkOne>
-           
-            
-            
-               
-                
-            
-          </div>
+            <ActiveLinkOne className='padding p-6 mt-20 text-[#9F9EA6]' to="/products">Rocking Chair</ActiveLinkOne><br />
+            <hr /><br />
+               <ActiveLinkOne className='padding p-6 text-[#9F9EA6]' to="/side-chair">Side Chair</ActiveLinkOne><br />
+               <hr /><br />
+               <ActiveLinkOne className='padding p-6 text-[#9F9EA6]' to="/lounge-chair">Lounge Chair</ActiveLinkOne>
+             
+              
+              
+                 
+                  
+              
+            </div>
+          }
+       
+          
         </>
     )
 }
