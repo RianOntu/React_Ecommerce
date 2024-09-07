@@ -1,10 +1,45 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import signup_image from '../src/assets/chair.png'
 import gooogle_logo from '../src/assets/google_logo.png'
 import sign_up_icon from '../src/assets/sign_up_icon.png'
 import apple_logo from '../src/assets/apple_logo.png'
 import visibility_off from '../src/assets/visibility_off.png'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { AuthenticationContext } from './ContextAPI/AuthenticationProvider'
 function SignInForm() {
+  
+  const [success,setSuccess]=useState('');
+  const [error,setError]=useState('');
+  const {logIn,googleSignIn,appleSignIn}=useContext(AuthenticationContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const from = location.state?.from?.pathname || '/'
+const handleLogin=event=>{
+  event.preventDefault();
+  const form=event.target;
+  const email=form.email.value;
+  const password=form.password.value;
+  logIn(email,password).then(result=>{
+    const loggedInUser=result.user;
+    console.log(loggedInUser);
+    form.reset();
+    navigate(from, { replace: true })
+    setError('')
+    setSuccess('Login Successful!')
+   
+  }).catch(error=>setError(error.message))
+}
+
+const handleGoogleSignIn=()=>{
+  googleSignIn().then(()=>navigate(from, { replace: true })).catch(error=>console.log(error))
+  
+}
+const handleAppleSignIn=()=>{
+  appleSignIn().then(()=>navigate(from, { replace: true })).catch(error=>console.log(error))
+}
+
     return (
 
         <>
@@ -13,7 +48,7 @@ function SignInForm() {
    <div className='p-3 bg-[#FAFAFA] w-[500px] h-[618px] text-start'>
     <h3 style={{fontWeight:"700",fontSize:"24px"}}>Welcome Back!</h3>
     <h4 style={{color:"#787878"}}>Enter your credentials to access your account</h4>
-    <form action="" className='container'>
+    <form onSubmit={handleLogin} action="" className='container'>
    
      <div className="email_input_div justify-center flex mt-[15px] w-[100%] relative">
      <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="text" name="" id="" />
@@ -35,8 +70,8 @@ function SignInForm() {
     <span class="divider-text">or</span>
      </div>
      <div className="flex gap-x-[25px] items-center justify-center mt-5">
-      <button className='flex gap-x-[5px] items-center border-2 border-[#E5E5E5]-300 py-1 px-4 rounded-[5px]'><img src={gooogle_logo} style={{width:"30px",height:"30px"}} alt="" />SignIn With Google</button>
-      <button className='flex gap-x-[5px] items-center border-2 border-[#E5E5E5]-300 py-1 px-4 rounded-[5px]'><img src={apple_logo} style={{width:"30px",height:"30px"}} alt="" />SignIn With Apple</button>
+      <button onClick={handleGoogleSignIn} className='flex gap-x-[5px] items-center border-2 border-[#E5E5E5]-300 py-1 px-4 rounded-[5px]'><img src={gooogle_logo} style={{width:"30px",height:"30px"}} alt="" />SignIn With Google</button>
+      <button onClick={handleAppleSignIn} className='flex gap-x-[5px] items-center border-2 border-[#E5E5E5]-300 py-1 px-4 rounded-[5px]'><img src={apple_logo} style={{width:"30px",height:"30px"}} alt="" />SignIn With Apple</button>
      </div>
      <div className="flex justify-center mt-3">
       <h4>Don't have an account? <a href="/register" className='text-[#0F3DDE]'>Sign Up</a></h4>

@@ -1,7 +1,6 @@
 import React, {  useEffect, useState } from 'react'
 import ProductsContext from './ProductsContext'
-import axios from 'axios'
-import Pagination from "react-js-pagination";
+
 
 function ProductProvider({children}) {
 
@@ -11,9 +10,9 @@ function ProductProvider({children}) {
     const [productsPerPage] = useState(6);
   
     useEffect(() => {
-      axios.get('http://localhost:3000/chairs')
-        .then(response => setProducts(response.data))
-        .catch(error => console.error('Error fetching products:', error));
+      fetch('http://localhost:3000/chairs')
+        .then(response =>response.json())
+        .then(data=>setProducts(data));
     }, []);
   
     // Calculate the products to display based on the current page

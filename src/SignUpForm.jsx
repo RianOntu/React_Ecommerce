@@ -4,7 +4,47 @@ import gooogle_logo from '../src/assets/google_logo.png'
 import sign_up_icon from '../src/assets/sign_up_icon.png'
 import apple_logo from '../src/assets/apple_logo.png'
 import visibility_off from '../src/assets/visibility_off.png'
+import { auth, AuthenticationContext } from './ContextAPI/AuthenticationProvider'
 function SignUpForm() {
+  const [success,setSuccess]=useState('');
+  const [error,setError]=useState('');
+  const {registerUser}=useContext(AuthenticationContext);
+
+const handleRegister=(event)=>{
+
+  event.preventDefault();
+  const form=event.target;
+  const name=form.name.value;
+  const email=form.email.value;
+  const password=form.password.value;
+  const photo_url=form.purl.value;
+
+  if(password.length<6){
+      setError('Password should be six characters long!');
+      return;
+  }
+  if(!/^(?=.*[\W_].*[\W_])/.test(password)){
+    setError("Please enter atleast two special characters!")
+    return;
+  }
+  registerUser(email,password).then(result=>{
+    const newUser=result.user;
+    updateProfile(auth.currentUser, {
+      displayName: name, photoURL: photo_url
+    }).then(() => {
+      setError('');
+      setSuccess('User has been registered successfully!')
+    }).catch((error) => {
+      
+    });
+    console.log(newUser);
+  }).catch(error=>setError(error.message))
+  form.reset();
+
+ 
+
+}
+  
     return (
 
         <>
@@ -14,7 +54,7 @@ function SignUpForm() {
     <h3 style={{fontWeight:"700",fontSize:"24px"}}>Welcome To</h3>
     <h2 style={{fontWeight:"800",fontSize:"40px"}}>Furni<span style={{color:"#1E99F5"}}>Flex</span></h2>
     <h4 style={{color:"#787878"}}>Sign up for purchase your desire product</h4>
-    <form action="" className='container'>
+    <form onSubmit={handleRegister} action="" className='container'>
      <div className="first_two_inputs flex gap-x-[15px] justify-center mt-5">
       <div className="relative w-[100vw]">
       <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="text" name="" id="" />

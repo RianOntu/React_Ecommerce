@@ -3,6 +3,7 @@ body,#root{
 }
 body{
     font-family: '../src/assets/BarlowCondensed-Regular.ttf';
+    overflow-x: hidden;
    
     
 }
