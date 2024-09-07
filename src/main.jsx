@@ -13,17 +13,18 @@ import ProductHome from './ProductHome/ProductHome.jsx';
 import Cart from './Cart/Cart.jsx';
 import AuthenticationProvider from './ContextAPI/AuthenticationProvider.jsx';
 import { CartProvider } from './Cart/CartProvider.jsx';
+import PrivateRoute from './PrivateRoute.jsx';
 
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<ProductHome/>,
+    element:<PrivateRoute><ProductHome/></PrivateRoute>,
    
   },
   {
     path:'/products',
-    element:<Products/>,
+    element:<PrivateRoute><Products/></PrivateRoute>,
     
   },
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
   },
   {
     path:'/cart',
-    element:<Cart/>
+    element:<PrivateRoute><Cart/></PrivateRoute>
   }
 ]);
 
