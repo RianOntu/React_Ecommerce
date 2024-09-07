@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ActiveLinkOne from './ActiveLinkOne';
+
 
 function Sidebar({chairType}) {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,13 +44,13 @@ function Sidebar({chairType}) {
         <i class="fas fa-bars block sm:hidden" onClick={ToggleSidebar} id='hamburger'></i>
         <div  class={`${isOpen == true ? 'flex flex-col z-10 bg-white p-6 w-52  inset-y-0  shadow-md h-screen overflow-y-auto absolute' : 'hidden'}`}>
         
-                <button onClick={()=>chairType('rocking chair')} className='padding p-6 mt-20 text-[#9F9EA6]'  >Rocking Chair</button><br />
+                <button onClick={()=>chairType('rocking_chair')} className='padding p-6 mt-20 text-[#9F9EA6]'  >Rocking Chair</button><br />
                 <hr />
                 <br />
-             <button onClick={()=>chairType('side chair')} className='padding p-6 text-[#9F9EA6]'  >Side Chair</button><br />
+             <button onClick={()=>chairType('side_chair')} className='padding p-6 text-[#9F9EA6]'  >Side Chair</button><br />
              <hr />
              <br />
-             <button onClick={()=>chairType('lounge chair')}  className='padding p-6 text-[#9F9EA6]' >Lounge Chair</button>
+             <button onClick={()=>chairType('lounge_chair')}  className='padding p-6 text-[#9F9EA6]' >Lounge Chair</button>
              
             
             
@@ -62,11 +62,11 @@ function Sidebar({chairType}) {
           {
             isLoading?<h1 className='center-container text-[50px]'>Loading...</h1>:<div className="bg-white p-6 hidden md:flex lg:flex  md:flex-col md:w-52 inset-y-0  shadow-md sm:h-full sm:overflow-y-auto fixed md:top-[80px] z-index">
          
-            <button onClick={()=>chairType('rocking chair')} className='padding p-6 mt-20 text-[#9F9EA6]' >Rocking Chair</button><br />
+            <button onClick={()=>chairType('rocking_chair')} className='padding p-6 mt-20 text-[#9F9EA6]' >Rocking Chair</button><br />
             <hr /><br />
-               <button onClick={()=>chairType('side chair')} className='padding p-6 text-[#9F9EA6]'>Side Chair</button><br />
+               <button onClick={()=>chairType('side_chair')} className='padding p-6 text-[#9F9EA6]'>Side Chair</button><br />
                <hr /><br />
-               <button onClick={()=>chairType('lounge chair')}  className='padding p-6 text-[#9F9EA6]'  >Lounge Chair</button>
+               <button onClick={()=>chairType('lounge_chair')}  className='padding p-6 text-[#9F9EA6]'  >Lounge Chair</button>
              
               
               

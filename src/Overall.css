@@ -112,3 +112,24 @@ hr{
   align-items: center; 
   height: 100vh; 
 }
+
+.relative {
+    position: relative;
+  }
+  
+  .absolute {
+    position: absolute;
+  }
+  
+  .inline-block {
+    display: inline-block;
+  }
+  
+  .rounded-full {
+    border-radius: 50%;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  

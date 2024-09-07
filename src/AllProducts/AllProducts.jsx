@@ -10,14 +10,12 @@ function AllProducts() {
   const { products, handlePageChange, currentPage, totalProducts } = useContext(ProductsContext);
   const [filteredProducts, setFilteredProducts] = useState(products);
 
-  // Synchronize the filtered products with the main product list when it changes
-  useEffect(() => {
-    setFilteredProducts(products);
-  }, [products]);
+ 
 
   const chairType = (type) => {
     // Debugging: Check what type is being filtered
     console.log('Filtering by type:', type);
+    
     
     const chairs = products.filter((product) => product.type.trim().toLowerCase() === type.trim().toLowerCase());
     
@@ -48,7 +46,7 @@ function AllProducts() {
         activePage={currentPage}
         itemsCountPerPage={6}
         totalItemsCount={totalProducts}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={2}
         onChange={handlePageChange}
         itemClass="pagination-item"
         linkClass="pagination-link"

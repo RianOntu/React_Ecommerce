@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import product_page_logo from '../assets/product_page_logo.png'
-import sign_up_icon from '../assets/sign_up_icon.png'
 import ActiveLink from '../ActiveLink/ActiveLink'
 import { AuthenticationContext } from '../ContextAPI/AuthenticationProvider';
 import CartContext from '../Cart/CartProvider';
@@ -8,10 +7,18 @@ import ProductContext from '../ContextAPI/ProductsContext';
 
 
 function ProductHeader() {
-    const {user}=useContext(AuthenticationContext);
+    const {user,logOut}=useContext(AuthenticationContext);
     const {cart}=useContext(CartContext)
     const {products}=useContext(ProductContext)
-   
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    const handleToggleDropdown = () => {
+        setShowDropdown(prev => !prev);
+      };
+    
+    const handleLogout = () => {
+       logOut()
+      };
     const totalProduct=cart.map(item=>{
         products.map(product=>item.id==product.id)
     })
@@ -38,7 +45,25 @@ function ProductHeader() {
         </div>
         
         </ActiveLink>
-        <img src={user?.photoURL} style={{width:"30px",height:"30px"}} className='rounded-[50%]' alt="" />
+        <div className="relative inline-block">
+      <img 
+        src={user?.photoURL} 
+        style={{ width: "30px", height: "30px" }} 
+        className='rounded-full' 
+        alt="User Avatar" 
+        onClick={handleToggleDropdown}
+      />
+      {showDropdown && (
+        <div className="absolute right-0 mt-2 w-32 z-111111111 bg-white border border-gray-300 rounded-md shadow-lg">
+          <button 
+            onClick={handleLogout} 
+            className="block px-4 py-2 text-gray-800 hover:bg-gray-100 w-full text-left"
+          >
+            Logout
+          </button>
+        </div>
+      )}
+    </div>
         </div>
         
         </div>
