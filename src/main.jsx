@@ -7,33 +7,42 @@ import {
 } from "react-router-dom";
 import SignUpForm from './SignUpForm.jsx';
 import SignInForm from './SignInForm.jsx';
-import MainContainer from './MainContainer.jsx';
 import Products from './Products.jsx';
+import ProductProvider from './ContextAPI/ProductProvider.jsx';
+import ProductHome from './ProductHome/ProductHome.jsx';
+import Cart from './Cart/Cart.jsx';
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<MainContainer/>,
-    children:[
-      {
-        path:'/login',
-        element:<SignInForm/>
-      },
-      {
-        path:'/register',
-        element:<SignUpForm/>
-      },
-      {
-        path:'/products',
-        element:<Products/>
-      }
-    ]
+    element:<ProductHome/>,
+   
   },
+  {
+    path:'/products',
+    element:<Products/>,
+    
+  },
+  {
+    path:'/login',
+    element:<SignInForm/>
+  },
+  {
+    path:'/register',
+    element:<SignUpForm/>
+  },
+  {
+    path:'/cart',
+    element:<Cart/>
+  }
 ]);
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <ProductProvider>
     <RouterProvider router={router} />
-  </StrictMode>,
+    </ProductProvider>
+    
+  </StrictMode>
 )

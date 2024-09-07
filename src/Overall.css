@@ -3,7 +3,7 @@ body,#root{
 }
 body{
     font-family: '../src/assets/BarlowCondensed-Regular.ttf';
-    overflow: hidden;
+   
     
 }
 .divider {
@@ -85,5 +85,22 @@ body{
     padding-bottom: 5px!important;
     padding-left: 10px!important;
     padding-right: 10px!important;
-    border-radius: 5px!important;
+    border-radius: 15px!important;
+}
+.mid-width{
+    width:calc(100vw - 13rem);
+    z-index:1
+}
+hr{
+    z-index:100;
+    position:sticky;
+    top:0
+}
+.z-index{
+    z-index:1111111!important;
+    background-color: white!important;
+}
+.z-100{
+    z-index:10!important;
+   background-color: white;
 }
