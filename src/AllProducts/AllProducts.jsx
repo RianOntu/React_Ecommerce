@@ -7,48 +7,35 @@ import { ProductsContext } from '../ContextAPI/ProductProvider';
 import './Pagination.css';
 
 function AllProducts() {
-  const { products, chairType, filteredProducts, setFilteredProducts } = useContext(ProductsContext);
+  const { products, chairType, type, filteredProducts, setFilteredProducts } = useContext(ProductsContext);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // Show 6 products per page
-  console.log("filtered products:",filteredProducts);
 
-  useEffect(()=>{
-    setFilteredProducts(products)
-  },[chairType])
-  console.log(filteredProducts);
-  
-  // Filter products whenever chairType changes or on initial load
+  // Initialize filtered products to show all products when the component loads
   useEffect(() => {
-    if (chairType) {
-      const filtered = products.filter(product => product.type === chairType);
-      setFilteredProducts(filtered);
+    if (type === 'all_chair' || !type) {
+      setFilteredProducts(products); // Show all products initially
     } else {
-      setFilteredProducts(products);
+      const filtered = products.filter(product => product.type === type);
+      setFilteredProducts(filtered);
     }
     setCurrentPage(1); // Reset to first page when filters change
-  }, []);
+  }, [type, products, setFilteredProducts]); // Correct dependencies for filtering
 
   // Calculate the products to display on the current page
-  console.log('products:',products);
- 
-  
-  useEffect(() => {
-    // Recalculate products when currentPage or filteredProducts changes
-    
-    const indexOfLastProduct = currentPage * itemsPerPage;
-    const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
-    setFilteredProducts(filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct));
-  }, [products]);
+  const indexOfLastProduct = currentPage * itemsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 
   // Handle page change
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
- 
+
   // Debugging logs
   console.log("Current Page:", currentPage);
   console.log("Filtered Products Length:", filteredProducts.length);
-  console.log("Final Products:", filteredProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
+  console.log("Final Products on Current Page:", currentProducts);
 
   return (
     <>
@@ -59,9 +46,9 @@ function AllProducts() {
           <Sidebar chairType={chairType} />
         </div>
         <div className="mid-width lg:ml-[13rem]">
-          <div className="grid mx-auto lg:mt-4 md:mx-auto lg:mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-x-[15px] gap-y-[20px] container z-10">
-            {filteredProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((product) => (
-              <SingleProduct key={product.id} product={product} products={products} />
+          <div className="grid all_products mx-auto gap-x-[15px] gap-y-[20px] container z-10">
+            {currentProducts.map((product) => (
+              <SingleProduct key={product.id} product={product} />
             ))}
           </div>
         </div>

@@ -41,8 +41,8 @@ function Sidebar({chairType}) {
 
     return (
         <>
-        <i class="fas fa-bars block sm:hidden" onClick={ToggleSidebar} id='hamburger'></i>
-        <div  class={`${isOpen == true ? 'flex flex-col z-10 bg-white p-6 w-52  inset-y-0  shadow-md h-screen overflow-y-auto absolute' : 'hidden'}`}>
+        <i class="fas fa-bars block sm:hidden md:block lg:hidden" onClick={ToggleSidebar} id='hamburger'></i>
+        <div  class={`${isOpen == true ? 'flex flex-col z-10 bg-white p-6 w-52  inset-y-0  shadow-md h-full overflow-y-auto absolute' : 'hidden'}`}>
         
                 <button onClick={()=>chairType('rocking_chair')} className='padding p-6 mt-20 text-[#9F9EA6]'  >Rocking Chair</button><br />
                 <hr />

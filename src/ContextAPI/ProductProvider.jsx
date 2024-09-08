@@ -29,14 +29,13 @@ export const ProductProvider = ({ children }) => {
 
     fetchProducts();
   }, []);
-  
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
   const chairType = (type) => {
     console.log('Filtering by type:', type);
-console.log(products);
+
 
     if (type === 'all_chair') {
       setFilteredProducts(products);
@@ -55,7 +54,7 @@ console.log(chairs);
 
 
   return (
-    <ProductsContext.Provider value={{ products, currentPage, productsPerPage, totalProducts, handlePageChange,chairType,filteredProducts,setFilteredProducts }}>
+    <ProductsContext.Provider value={{ products, currentPage, productsPerPage, totalProducts, handlePageChange,chairType,filteredProducts,setFilteredProducts,type,setType }}>
       {children}
     </ProductsContext.Provider>
   );
