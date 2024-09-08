@@ -29,6 +29,7 @@ export const ProductProvider = ({ children }) => {
 
     fetchProducts();
   }, []);
+  
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);

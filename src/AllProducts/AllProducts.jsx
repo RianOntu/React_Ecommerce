@@ -10,7 +10,13 @@ function AllProducts() {
   const { products, chairType, filteredProducts, setFilteredProducts } = useContext(ProductsContext);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // Show 6 products per page
+  console.log("filtered products:",filteredProducts);
 
+  useEffect(()=>{
+    setFilteredProducts(products)
+  },[chairType])
+  console.log(filteredProducts);
+  
   // Filter products whenever chairType changes or on initial load
   useEffect(() => {
     if (chairType) {
@@ -20,21 +26,25 @@ function AllProducts() {
       setFilteredProducts(products);
     }
     setCurrentPage(1); // Reset to first page when filters change
-  }, [products, chairType, setFilteredProducts]);
+  }, []);
 
   // Calculate the products to display on the current page
+  console.log('products:',products);
+ 
+  
   useEffect(() => {
     // Recalculate products when currentPage or filteredProducts changes
+    
     const indexOfLastProduct = currentPage * itemsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
     setFilteredProducts(filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct));
-  }, [currentPage, filteredProducts, itemsPerPage]);
+  }, [products]);
 
   // Handle page change
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
+ 
   // Debugging logs
   console.log("Current Page:", currentPage);
   console.log("Filtered Products Length:", filteredProducts.length);
