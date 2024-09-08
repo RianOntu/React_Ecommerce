@@ -1,44 +1,56 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import signup_image from '../src/assets/chair.png'
 import gooogle_logo from '../src/assets/google_logo.png'
 import sign_up_icon from '../src/assets/sign_up_icon.png'
 import apple_logo from '../src/assets/apple_logo.png'
 import visibility_off from '../src/assets/visibility_off.png'
 import { auth, AuthenticationContext } from './ContextAPI/AuthenticationProvider'
+import { updateProfile } from 'firebase/auth'
 function SignUpForm() {
   const [success,setSuccess]=useState('');
   const [error,setError]=useState('');
-  const {registerUser}=useContext(AuthenticationContext);
+  const {registerUser,setLoading}=useContext(AuthenticationContext);
 
 const handleRegister=(event)=>{
 
   event.preventDefault();
-  const form=event.target;
-  const name=form.name.value;
-  const email=form.email.value;
-  const password=form.password.value;
-  const photo_url=form.purl.value;
+  const form=event?.target;
+  const name=form?.name?.value;
+  const email=form?.email?.value;
+  const password=form?.password?.value;
+  const photo_url=form?.purl?.value;
+console.log(password);
 
-  if(password.length<6){
+  if(password?.length<6){
       setError('Password should be six characters long!');
       return;
   }
-  if(!/^(?=.*[\W_].*[\W_])/.test(password)){
-    setError("Please enter atleast two special characters!")
+  const trimmedPassword = password?.trim()
+  if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/.test(trimmedPassword)) {
+    
+    setError("Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.");
+    
     return;
-  }
+}
   registerUser(email,password).then(result=>{
     const newUser=result.user;
     updateProfile(auth.currentUser, {
       displayName: name, photoURL: photo_url
     }).then(() => {
       setError('');
-      setSuccess('User has been registered successfully!')
+      
+      setSuccess('User has been registered successfully!Please login')
+     
     }).catch((error) => {
       
     });
     console.log(newUser);
-  }).catch(error=>setError(error.message))
+  }).catch(error=>{
+    
+    setError(error.message)
+   
+
+  })
   form.reset();
 
  
@@ -51,13 +63,16 @@ const handleRegister=(event)=>{
          <div className="flex w-full h-full">
   <div className="p-5 w-1/2 flex items-center justify-center">
    <div className='p-3 bg-[#FAFAFA] w-[500px] h-[618px] text-center'>
+   <p style={{color:"red"}} className='text-bold text-center text-red'>{error?error:''}</p>
+   <p style={{color:"green"}} className='text-bold text-center text-green'>{success?success:''}</p>
     <h3 style={{fontWeight:"700",fontSize:"24px"}}>Welcome To</h3>
     <h2 style={{fontWeight:"800",fontSize:"40px"}}>Furni<span style={{color:"#1E99F5"}}>Flex</span></h2>
+   
     <h4 style={{color:"#787878"}}>Sign up for purchase your desire product</h4>
     <form onSubmit={handleRegister} action="" className='container'>
      <div className="first_two_inputs flex gap-x-[15px] justify-center mt-5">
       <div className="relative w-[100vw]">
-      <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="text" name="" id="" />
+      <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="text" name="name" id="" />
       <h6 className='text-[#C0C0C0] absolute top-0 left-[11px]'>First name(Optional)</h6>
       </div>
       <div className="relative w-[100vw]">
@@ -67,11 +82,11 @@ const handleRegister=(event)=>{
 
      </div>
      <div className="email_input_div justify-center flex mt-[15px] w-[100%] relative">
-     <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="text" name="" id="" />
+     <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="text" name="email" id="" />
      <h6 className='text-[#C0C0C0] absolute top-0 left-[11px]'>Email address</h6>
      </div>
      <div className="email_input_div justify-center flex mt-[15px] w-[100%] relative">
-     <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="password" name="" id="" />
+     <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="password" name="password" id="" />
     <a href=""><h6 className='text-[#70BDF6] absolute top-0 forgot_password top-[54px] right-[0px]'>Forgot Password?</h6></a>
      <h6 className='text-[#C0C0C0] absolute top-0 left-[11px]'>Password</h6>
      <img className='absolute top-[17px] right-[15px]' src={visibility_off} style={{width:"20px",height:"20px"}} alt="" />

@@ -2,14 +2,15 @@ import React, { useContext, useState } from 'react'
 import product_page_logo from '../assets/product_page_logo.png'
 import ActiveLink from '../ActiveLink/ActiveLink'
 import { AuthenticationContext } from '../ContextAPI/AuthenticationProvider';
-import CartContext from '../Cart/CartProvider';
-import ProductContext from '../ContextAPI/ProductsContext';
+import {CartContext} from '../Cart/CartProvider';
+import {ProductsContext} from '../ContextAPI/ProductProvider';
+
 
 
 function ProductHeader() {
     const {user,logOut}=useContext(AuthenticationContext);
     const {cart}=useContext(CartContext)
-    const {products}=useContext(ProductContext)
+    const {products}=useContext(ProductsContext)
     const [showDropdown, setShowDropdown] = useState(false);
 
     const handleToggleDropdown = () => {
@@ -22,7 +23,7 @@ function ProductHeader() {
     const totalProduct=cart.map(item=>{
         products.map(product=>item.id==product.id)
     })
-    console.log(totalProduct);
+   
     
     return (
         <>

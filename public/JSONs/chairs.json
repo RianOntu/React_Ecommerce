@@ -7,7 +7,7 @@
         "price": 120,
         "percent_off": 15,
         "main_price": 141.18,
-        "type": "rocking chair",
+        "type": "rocking_chair",
         "description": "A timeless wooden rocking chair with a sturdy build and natural finish. Perfect for relaxing on the porch or indoors."
       },
       {
@@ -17,7 +17,7 @@
         "price": 180,
         "percent_off": 10,
         "main_price": 200,
-        "type": "rocking chair",
+        "type": "rocking_chair",
         "description": "This modern rocker features plush upholstery and sleek metal legs, adding style to any contemporary space."
       },
       {
@@ -27,7 +27,7 @@
         "price": 99,
         "percent_off": 20,
         "main_price": 123.75,
-        "type": "rocking chair",
+        "type": "rocking_chair",
         "description": "Made from weather-resistant materials, this rocking chair is perfect for outdoor settings like gardens or patios."
       },
       {
@@ -37,7 +37,7 @@
         "price": 150,
         "percent_off": 25,
         "main_price": 200,
-        "type": "rocking chair",
+        "type": "rocking_chair",
         "description": "A vintage rocking chair with intricate carvings that brings a touch of elegance and nostalgia to any room."
       },
       {
@@ -47,7 +47,7 @@
         "price": 230,
         "percent_off": 12,
         "main_price": 261.36,
-        "type": "rocking chair",
+        "type": "rocking_chair",
         "description": "Featuring a reclining backrest and extra padding, this rocker is designed for ultimate comfort and relaxation."
       },
       {

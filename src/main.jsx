@@ -45,11 +45,16 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthenticationProvider>
+    <CartProvider>
     <ProductProvider>
-      <CartProvider>
+ 
+      
     <RouterProvider router={router} />
-    </CartProvider>
+    
+    
     </ProductProvider>
+    </CartProvider>
+    
     </AuthenticationProvider>
   </StrictMode>
 )

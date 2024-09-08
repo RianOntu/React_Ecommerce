@@ -18,9 +18,9 @@ function SignInForm() {
   const from = location.state?.from?.pathname || '/'
 const handleLogin=event=>{
   event.preventDefault();
-  const form=event.target;
-  const email=form.email.value;
-  const password=form.password.value;
+  const form=event?.target;
+  const email=form?.email?.value;
+  const password=form?.password?.value;
   logIn(email,password).then(result=>{
     const loggedInUser=result.user;
     console.log(loggedInUser);
@@ -46,16 +46,18 @@ const handleAppleSignIn=()=>{
          <div className="flex w-full h-full">
   <div className="p-5 w-1/2 flex items-center justify-center">
    <div className='p-3 bg-[#FAFAFA] w-[500px] h-[618px] text-start'>
+   <p style={{color:"red"}} className='text-bold text-center'>{error?error:''}</p>
+   <p style={{color:"green"}} className='text-bold text-center'>{success?success:''}</p>
     <h3 style={{fontWeight:"700",fontSize:"24px"}}>Welcome Back!</h3>
     <h4 style={{color:"#787878"}}>Enter your credentials to access your account</h4>
     <form onSubmit={handleLogin} action="" className='container'>
    
      <div className="email_input_div justify-center flex mt-[15px] w-[100%] relative">
-     <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="text" name="" id="" />
+     <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="text" name="email" id="" />
      <h6 className='text-[#C0C0C0] absolute top-0 left-[11px]'>Email address</h6>
      </div>
      <div className="email_input_div justify-center flex mt-[15px] w-[100%] relative">
-     <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="password" name="" id="" />
+     <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="password" name="password" id="" />
      <h6 className='text-[#C0C0C0] absolute top-0 left-[11px]'>Password</h6>
      <img className='absolute top-[17px] right-[15px]' src={visibility_off} style={{width:"20px",height:"20px"}} alt="" />
      </div>

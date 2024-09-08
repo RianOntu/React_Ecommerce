@@ -1,14 +1,15 @@
 import React, { useContext, useState } from 'react'
 import ProductHeader from '../ProductsHeader/ProductHeader'
-import CartContext from './CartProvider'
-import ProductContext from '../ContextAPI/ProductsContext';
+import {CartContext} from './CartProvider'
+
 import { AuthenticationContext } from '../ContextAPI/AuthenticationProvider';
+import {ProductsContext} from '../ContextAPI/ProductProvider';
 
 function Cart() {
     const [subTotal,setSubTotal]=useState(0)
     const {cart, removeFromCart, updateQuantity,increaseQuantity,dereaseQuantity}=useContext(CartContext);
    
-    const {products}=useContext(ProductContext)
+    const {products}=useContext(ProductsContext)
     const {user}=useContext(AuthenticationContext);
     const totalProduct=cart.map(item=>{
         products.map(product=>item.id==product.id)

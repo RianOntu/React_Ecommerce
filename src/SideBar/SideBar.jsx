@@ -51,7 +51,9 @@ function Sidebar({chairType}) {
              <hr />
              <br />
              <button onClick={()=>chairType('lounge_chair')}  className='padding p-6 text-[#9F9EA6]' >Lounge Chair</button>
-             
+             <br />
+               <hr /><br />
+               <button onClick={()=>chairType('all_chair')}  className='padding p-6 text-[#9F9EA6]'  >All Chair</button>
             
             
                 
@@ -66,7 +68,9 @@ function Sidebar({chairType}) {
             <hr /><br />
                <button onClick={()=>chairType('side_chair')} className='padding p-6 text-[#9F9EA6]'>Side Chair</button><br />
                <hr /><br />
-               <button onClick={()=>chairType('lounge_chair')}  className='padding p-6 text-[#9F9EA6]'  >Lounge Chair</button>
+               <button onClick={()=>chairType('lounge_chair')}  className='padding p-6 text-[#9F9EA6]'  >Lounge Chair</button><br />
+               <hr /><br />
+               <button onClick={()=>chairType('all_chair')}  className='padding p-6 text-[#9F9EA6]'  >All Chair</button>
              
               
               

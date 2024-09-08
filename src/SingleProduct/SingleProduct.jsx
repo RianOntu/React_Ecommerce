@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import CartContext from '../Cart/CartProvider';
+import {CartContext} from '../Cart/CartProvider';
 
 
 
-const SingleProduct=React.memo(({product,products}) =>{
+const SingleProduct=({product}) =>{
   const {addToCart}=useContext(CartContext);
   
   const price = product.price;
@@ -41,6 +41,6 @@ const SingleProduct=React.memo(({product,products}) =>{
   </div>
         </>
     )
-})
+}
 
 export default SingleProduct
