@@ -25,8 +25,8 @@ function Cart() {
         <>
         <ProductHeader/>
         <hr />
-        <div className="container flex md:flex lg:flex  gap-x-[45px]">
-            <div className="overview w-[70%]">
+        <div className="container1 flex flex-col md:flex-row  gap-x-[40px]">
+            <div className="overview w-[100%] md:w-[70%] mx-auto">
             <h2 className='text-black-900 p-6 text-[28px]'><b>An overview of your order</b></h2>
             
             {   
@@ -37,7 +37,7 @@ function Cart() {
            
            
                
-               <div className="flex">
+               <div className="flex ">
   
                <div className="flex gap-x-[15px] items-center">
                <div className='flex border-2 border-[#F0F0F0] p-3 w-[71px]'><button onClick={()=>dereaseQuantity(item.id)}>-</button><p className='ml-2 mr-2'>{parseInt(item.quantity)}</p><button onClick={()=>increaseQuantity(item.id)}>+</button></div>
@@ -63,7 +63,7 @@ function Cart() {
             
             </div>
          
-                <div className="order_details w-[30%] mt-[89px] ">
+                <div className="order_details w-[100%] md:w-[30%] mx-auto mt-[89px] ">
                 <div className="order_summery bg-[#FAFAFA] p-4">
                     <div className="flex justify-between"><b>Subtotal</b><b>${total}</b></div>
                     <div className="flex justify-between"><b>Shipping</b><b>$10</b></div>

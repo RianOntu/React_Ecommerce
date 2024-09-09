@@ -133,7 +133,7 @@ hr{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   .container{
-    max-width: fit-content;
+    max-width: 100%;
   }
   .min{
     width: fit-content;
@@ -206,6 +206,9 @@ hr{
     .min{
         width:17rem
     }
+    .container{
+      max-width: fit-content;
+    }
   }
   @media (min-width:1440px){
     .all_products{
@@ -213,6 +216,9 @@ hr{
     }
     .min{
         width:16rem
+    }
+    .container{
+      max-width: fit-content;
     }
   }
 
@@ -223,6 +229,9 @@ hr{
     }
     .min{
         width:fit-content
+    }
+    .container{
+      max-width: fit-content;
     }
   }
 
