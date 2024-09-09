@@ -21,7 +21,7 @@ const SingleProduct=({product}) =>{
          <div class="w-60 min bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl relative h-[600px]">
     
     
-      <img  src={product.image} alt="Product" class="h-80 w-72 object-cover padding rounded-[5px]" />
+      <img style={{width:"272px",height:"320px"}}  src={product.image} alt="Product" class="h-80 w-72 object-cover padding rounded-[5px]" />
       <div class="px-4 py-3 w-72 lg:pr-[4rem] flex flex-row justify-between items-center flame h-[210px]">
         
        <div>

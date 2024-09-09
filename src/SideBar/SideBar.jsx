@@ -32,8 +32,8 @@ function Sidebar({chairType}) {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
-  useEffect(()=>{
-    console.log(isOpen);
+   console.log(isOpen);
+   useEffect(()=>{
   
     isOpen===true?document.getElementById('hamburger').style.transform = "translateX(208px)":document.getElementById('hamburger').style.transform = "translateX(0px)"
   },[isOpen])

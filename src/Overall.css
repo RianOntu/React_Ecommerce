@@ -3,7 +3,7 @@ body,#root{
 }
 body{
     font-family: '../src/assets/BarlowCondensed-Regular.ttf';
-    overflow-x: hidden;
+   
    
     
 }
@@ -141,12 +141,54 @@ hr{
   .all_products{
     margin-top:15px
   }
-  @media (min-width:375px) and (max-width:430px){
+  .rightSideBarMobile{
+    right: 0;
+    position: absolute;
+    top: 91px;
+    width: 100vw;
+  }
+  
+  @media (min-width:375px) and (max-width:480px){
     .mid-width{
-        width:375px;
+        width:100%;
+      }
+      #root{
+        width: 100vw;
+      }
+      .pagination {
+        flex-direction: column; /* Stack items vertically on very small screens */
+        align-items: stretch; /* Make each item stretch to full width */
+      }
+      
+      .pagination a,
+      .pagination li {
+        padding: 8px; /* Adjust padding for mobile */
+        margin: 4px 0; /* Space items vertically */
+        width: 100%; /* Make items full-width on mobile */
+        text-align: center; /* Center text */
+      }
+      
+      .pagination .active a {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+        width: 100%; /* Full-width active items */
+      }
+      
+      .pagination .disabled a {
+        cursor: not-allowed;
+        color: #ccc;
+        border-color: #ddd;
+        width: 100%; /* Full-width disabled items */
       }
   }
   @media (min-width:768px) and (max-width:992px){
+    .pagination a,
+    .pagination li {
+      padding: 6px 10px; 
+      margin: 0 2px; 
+      font-size: 12px; 
+    }
     .all_products{
         grid-template-columns: repeat(2,1fr);
     }
