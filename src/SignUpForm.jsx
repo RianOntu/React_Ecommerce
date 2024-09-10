@@ -4,12 +4,19 @@ import gooogle_logo from '../src/assets/google_logo.png'
 import sign_up_icon from '../src/assets/sign_up_icon.png'
 import apple_logo from '../src/assets/apple_logo.png'
 import visibility_off from '../src/assets/visibility_off.png'
+import visibility_on from '../src/assets/eye.png'
 import { auth, AuthenticationContext } from './ContextAPI/AuthenticationProvider'
 import { updateProfile } from 'firebase/auth'
 function SignUpForm() {
+  const [passwordVisibility,setPasswordVisibility]=useState(false);
   const [success,setSuccess]=useState('');
   const [error,setError]=useState('');
   const {registerUser,setLoading}=useContext(AuthenticationContext);
+
+
+  const togglePasswordVisibility=()=>{
+    setPasswordVisibility(passwordVisibility=>!passwordVisibility)
+  }
 
 const handleRegister=(event)=>{
 
@@ -81,8 +88,11 @@ console.log(password);
               <input className="border-2 border-gray-300 p-2 rounded-md w-full" type="text" name="email" placeholder="Email address" />
             </div>
             <div className="email_input_div justify-center flex mt-4 w-full relative">
-              <input className="border-2 border-gray-300 p-2 rounded-md w-full" type="password" name="password" placeholder="Password" />
-              <img className="absolute top-[14px] right-[15px] cursor-pointer" src={visibility_off} style={{ width: "20px", height: "20px" }} alt="Toggle visibility" />
+              <input className="border-2 border-gray-300 p-2 rounded-md w-full" type={passwordVisibility?'text':"password"} name="password" placeholder="Password" />
+          {
+            passwordVisibility?<img onClick={togglePasswordVisibility} className="absolute top-[14px] right-[15px] cursor-pointer" src={visibility_on} style={{ width: "20px", height: "20px",color:"#707070" }} alt="Toggle visibility" />:<img onClick={togglePasswordVisibility} className="absolute top-[14px] right-[15px] cursor-pointer" src={visibility_off} style={{ width: "20px", height: "20px" }} alt="Toggle visibility" />
+          }
+              
               <a href="#" className="absolute top-[54px] right-0 text-blue-400">Forgot Password?</a>
             </div>
             <div className="tickdiv mt-5 flex items-center gap-x-2">

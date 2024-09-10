@@ -4,13 +4,17 @@ import gooogle_logo from '../src/assets/google_logo.png'
 import sign_up_icon from '../src/assets/sign_up_icon.png'
 import apple_logo from '../src/assets/apple_logo.png'
 import visibility_off from '../src/assets/visibility_off.png'
+import visibility_on from '../src/assets/eye.png'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { AuthenticationContext } from './ContextAPI/AuthenticationProvider'
 function SignInForm() {
-  
+  const [passwordVisibility,setPasswordVisibility]=useState(false);
   const [success,setSuccess]=useState('');
   const [error,setError]=useState('');
   const {logIn,googleSignIn,appleSignIn}=useContext(AuthenticationContext);
+  const togglePasswordVisibility=()=>{
+    setPasswordVisibility(passwordVisibility=>!passwordVisibility)
+  }
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -55,8 +59,11 @@ const handleAppleSignIn=()=>{
               <input className="border-2 border-gray-300 p-2 rounded-[5px] w-full cursor-pointer" type="text" name="email" placeholder="Email address" />
             </div>
             <div className="email_input_div flex justify-center mt-4 w-full relative">
-              <input className="border-2 border-gray-300 p-2 rounded-[5px] w-full cursor-pointer" type="password" name="password" placeholder="Password" />
-              <img className="absolute top-[17px] right-[15px] cursor-pointer" src={visibility_off} style={{ width: "20px", height: "20px" }} alt="Toggle visibility" />
+            <input className="border-2 border-gray-300 p-2 rounded-md w-full" type={passwordVisibility?'text':"password"} name="password" placeholder="Password" />
+          {
+            passwordVisibility?<img onClick={togglePasswordVisibility} className="absolute top-[14px] right-[15px] cursor-pointer" src={visibility_on} style={{ width: "20px", height: "20px",color:"#707070" }} alt="Toggle visibility" />:<img onClick={togglePasswordVisibility} className="absolute top-[14px] right-[15px] cursor-pointer" src={visibility_off} style={{ width: "20px", height: "20px" }} alt="Toggle visibility" />
+          }
+            
             </div>
             <div className="tickdiv mt-3 flex items-center">
               <input type="checkbox" className="cursor-pointer" />
