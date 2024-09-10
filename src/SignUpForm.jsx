@@ -60,82 +60,71 @@ console.log(password);
     return (
 
         <>
-         <div className="flex w-full h-full">
-  <div className="p-5 w-1/2 flex items-center justify-center">
-   <div className='p-3 bg-[#FAFAFA] w-[500px] h-[618px] text-center'>
-   <p style={{color:"red"}} className='text-bold text-center text-red'>{error?error:''}</p>
-   <p style={{color:"green"}} className='text-bold text-center text-green'>{success?success:''}</p>
-    <h3 style={{fontWeight:"700",fontSize:"24px"}}>Welcome To</h3>
-    <h2 style={{fontWeight:"800",fontSize:"40px"}}>Furni<span style={{color:"#1E99F5"}}>Flex</span></h2>
-   
-    <h4 style={{color:"#787878"}}>Sign up for purchase your desire product</h4>
-    <form onSubmit={handleRegister} action="" className='container'>
-     <div className="first_two_inputs flex gap-x-[15px] justify-center mt-5">
-      <div className="relative w-[100vw]">
-      <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="text" name="name" id="" />
-      <h6 className='text-[#C0C0C0] absolute top-0 left-[11px]'>First name(Optional)</h6>
-      </div>
-      <div className="relative w-[100vw]">
-      <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="text" name="" id="" />
-      <h6 className='text-[#C0C0C0] absolute top-0 left-[11px]'>Last name(Optional)</h6>
+        <div className="flex flex-col md:flex-row w-full h-full items-center justify-center sign_in_up">
+      <div className="p-5 w-full md:w-1/2 flex items-center justify-center">
+        <div className="p-3 bg-[#FAFAFA] w-full max-w-[500px] h-auto md:h-[618px] text-center">
+          <p className="font-bold text-red-500">{error ? error : ''}</p>
+          <p className="font-bold text-green-500">{success ? success : ''}</p>
+          <h3 className="font-bold text-2xl">Welcome To</h3>
+          <h2 className="font-extrabold text-4xl">Furni<span className="text-blue-500">Flex</span></h2>
+          <h4 className="text-gray-500">Sign up to purchase your desired product</h4>
+          <form onSubmit={handleRegister} className="container1">
+            <div className="first_two_inputs flex flex-col md:flex-row gap-y-3 md:gap-y-0 md:gap-x-4 justify-center mt-5">
+              <div className="relative w-full">
+                <input className="border-2 border-gray-300 p-2 rounded-md w-full" type="text" name="firstName" placeholder="First name (Optional)" />
+              </div>
+              <div className="relative w-full">
+                <input className="border-2 border-gray-300 p-2 rounded-md w-full" type="text" name="lastName" placeholder="Last name (Optional)" />
+              </div>
+            </div>
+            <div className="email_input_div justify-center flex mt-4 w-full relative">
+              <input className="border-2 border-gray-300 p-2 rounded-md w-full" type="text" name="email" placeholder="Email address" />
+            </div>
+            <div className="email_input_div justify-center flex mt-4 w-full relative">
+              <input className="border-2 border-gray-300 p-2 rounded-md w-full" type="password" name="password" placeholder="Password" />
+              <img className="absolute top-[14px] right-[15px] cursor-pointer" src={visibility_off} style={{ width: "20px", height: "20px" }} alt="Toggle visibility" />
+              <a href="#" className="absolute top-[54px] right-0 text-blue-400">Forgot Password?</a>
+            </div>
+            <div className="tickdiv mt-5 flex items-center gap-x-2">
+              <input type="checkbox" className="cursor-pointer" />
+              <h4 className="text-start font-semibold">
+                I agree to the <a href="#" className="underline text-blue-500">Terms and Policy</a>
+              </h4>
+            </div>
+            <div className="tickdiv mt-3 w-full">
+              <button className="bg-black text-white w-full p-3 rounded-md">Sign Up</button>
+            </div>
+            <div className="divider mt-3 flex items-center justify-center">
+              <span className="divider-text">or</span>
+            </div>
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-center mt-5">
+              <button className="flex gap-x-2 items-center border-2 border-gray-300 py-2 px-4 rounded-md">
+                <img src={gooogle_logo} style={{ width: "30px", height: "30px" }} alt="Google logo" />
+                Sign In With Google
+              </button>
+              <button className="flex gap-x-2 items-center border-2 border-gray-300 py-2 px-4 rounded-md">
+                <img src={apple_logo} style={{ width: "30px", height: "30px" }} alt="Apple logo" />
+                Sign In With Apple
+              </button>
+            </div>
+            <div className="flex justify-center mt-3">
+              <h4>Have an account? <a href="/login" className="text-blue-600">Sign In</a></h4>
+            </div>
+          </form>
+        </div>
       </div>
 
-     </div>
-     <div className="email_input_div justify-center flex mt-[15px] w-[100%] relative">
-     <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="text" name="email" id="" />
-     <h6 className='text-[#C0C0C0] absolute top-0 left-[11px]'>Email address</h6>
-     </div>
-     <div className="email_input_div justify-center flex mt-[15px] w-[100%] relative">
-     <input className='border-2 border-[#E5E5E5]-300 p-2 rounded-[5px] w-[100%] cursor' type="password" name="password" id="" />
-    <a href=""><h6 className='text-[#70BDF6] absolute top-0 forgot_password top-[54px] right-[0px]'>Forgot Password?</h6></a>
-     <h6 className='text-[#C0C0C0] absolute top-0 left-[11px]'>Password</h6>
-     <img className='absolute top-[17px] right-[15px]' src={visibility_off} style={{width:"20px",height:"20px"}} alt="" />
-     </div>
-     <div className="tickdiv mt-5 flex  gap-x-0.5">
-     <input type="checkbox" class=" cursor" />
-     <h4 className='text-start ml-2' style={{fontWeight:"700"}}>I agree to the <a href=""><u>Terms and Policy</u></a></h4>
-     </div>
-     <div className="tickdiv mt-3 w-full ">
-      <button className='bg-[#000000] text-white w-full p-3 rounded-[5px]'>Sign Up</button>
-     </div>
-     <div class="divider mt-3">
-    <span class="divider-text">or</span>
-     </div>
-     <div className="flex gap-x-[25px] items-center justify-center mt-5">
-      <button className='flex gap-x-[5px] items-center border-2 border-[#E5E5E5]-300 py-1 px-4 rounded-[5px]'><img src={gooogle_logo} style={{width:"30px",height:"30px"}} alt="" />SignIn With Google</button>
-      <button className='flex gap-x-[5px] items-center border-2 border-[#E5E5E5]-300 py-1 px-4 rounded-[5px]'><img src={apple_logo} style={{width:"30px",height:"30px"}} alt="" />SignIn With Apple</button>
-     </div>
-     <div className="flex justify-center mt-3">
-      <h4>Have an account? <a href="/login" className='text-[#0F3DDE]'>Sign In</a></h4>
-     </div>
-     
-    </form>
-   </div>
-  </div>
-  
-  <div className='chair_image w-1/2 relative'>
-    <img src={signup_image} className='w-full h-[100vh] object-cover'  alt="" />
-    <div className="absolute furni_flex_icon">
-      
-      <img className='sign_icon'  src={sign_up_icon} style={{width:"89px",height:"85px"}}  alt="" />
-      <h2 className='furni' style={{fontWeight:"800",fontSize:"40px",color:"white"}}>Furni<span style={{color:"#1E99F5"}}>Flex</span></h2>
-      
-   
-     
-    
+      <div className="chair_image hidden md:flex w-full md:w-1/2 relative h-[50vh] md:h-auto">
+        <img src={signup_image} className="w-full h-full object-cover" alt="Sign Up" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
+          <img className="sign_icon mb-4" src={sign_up_icon} style={{ width: "89px", height: "85px" }} alt="FurniFlex Icon" />
+          <h2 className="font-extrabold text-4xl text-white">Furni<span className="text-blue-400">Flex</span></h2>
+          <div className="w-[80%] md:w-[331px] mt-4 text-center">
+            <h4 className="text-white">Discover a seamless shopping experience with our curated collection of products. From fashion to electronics, we bring quality.</h4>
+          </div>
+        </div>
+      </div>
     </div>
-    <div className="absolute w-full signup_description_wrapper">
-    <div className="signup_description  w-[331px]">
-    <h4 className='text-white text-center'>Discover a seamless shopping experience with our curated collection of products.From fashion to electronics,we bring quality.</h4>
-    </div>
-    </div>
-  
-    
-    
-  </div>
- 
- 
- </div>
         </>
     )
 }

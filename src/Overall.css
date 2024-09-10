@@ -1,5 +1,5 @@
 body,#root{
-    height:100%;
+    height:100vh;
 }
 body{
     font-family: '../src/assets/BarlowCondensed-Regular.ttf';
@@ -7,6 +7,7 @@ body{
    
     
 }
+
 .divider {
     display: flex;
     align-items: center;
@@ -27,12 +28,7 @@ body{
     font-size: 14px; 
     white-space: nowrap;
 }
-.furni_flex_icon{
-  
-    top: 35%;  
-    left: 50%; 
-    width: 200px;
-}
+
 .furni_flex_icon img{
     display: flex;
     margin-left: auto;
@@ -124,7 +120,7 @@ hr{
   .inline-block {
     display: inline-block;
   }
-  
+ 
   .rounded-full {
     border-radius: 50%;
   }
@@ -147,6 +143,129 @@ hr{
     top: 91px;
     width: 100vw;
   }
+  footer {
+    background-color: #121212;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-logo h2 {
+    color: #00aaff;
+}
+
+.footer-links {
+    display: flex;
+    flex: 3;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    color: #b0b0b0;
+    margin-right: 15px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #00aaff;
+}
+
+.footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.footer-bottom-links a {
+    color: #b0b0b0;
+    margin-right: 15px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer-bottom-links a:hover {
+    color: #fff;
+}
+
+.footer-country {
+    margin-top: 10px;
+}
+
+.footer-country p {
+    color: #b0b0b0;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    color: #b0b0b0;
+}
+.first-box {
+  width: 100vh; /* width of the first box */
+  position: relative;
+}
+
+.second-box {
+  width: 60%; /* width of the second box */
+  margin-left: 20%;
+  margin-right: 20%;
+  position:absolute;
+}
   
   @media (min-width:375px) and (max-width:480px){
     .mid-width{
@@ -198,10 +317,19 @@ hr{
       .min{
         width:17rem
       }
+      /* .furni_flex_icon{
+        top: 35%!important;
+        left:21%!important
+      }
+      .signup_description_wrapper {
+        top: 49%!important;
+        left: 3%!important;
+    } */
   }
   @media (min-width:1024px){
     .all_products{
         grid-template-columns: repeat(3,1fr);
+        margin-left: 5px;
     }
     .min{
         width:17rem
@@ -209,10 +337,27 @@ hr{
     .container{
       max-width: fit-content;
     }
+    /* .signup_description_wrapper {
+      top: 46%!important;
+      left: 19%!important;
   }
+  .furni_flex_icon{
+  
+    top: 37%!important;  
+    left: 27%!important; 
+    width: 200px!important;
+} */
+  }
+  @media (max-width:1439px){
+   
+    
+  }
+ 
   @media (min-width:1440px){
     .all_products{
         grid-template-columns: repeat(4,1fr);
+        margin-left: auto;
+        margin-right: auto;
     }
     .min{
         width:16rem
@@ -220,7 +365,15 @@ hr{
     .container{
       max-width: fit-content;
     }
-  }
+    .signup_description_wrapper{
+        left:30%
+    }
+    .furni_flex_icon {
+      top: 43%;
+      left: 39%;
+    }
+  
+}
 
 
   @media (min-width:2560px){
@@ -233,7 +386,35 @@ hr{
     .container{
       max-width: fit-content;
     }
+    .signup_description_wrapper {
+      top: 58%!important;
+      left:44%!important;
+    }
+    .furni_flex_icon{
+  
+      top: 35%!important;  
+      left: 50%!important; 
+      width: 200px!important;
   }
+  }
+  @media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-bottom-links {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+   
+}
 
 
   

@@ -60,7 +60,7 @@ function ProductHeader() {
     return (
         <>
 
-        <div className="flex justify-between items-center sticky top-0 z-100 p-5">
+        <div className="flex justify-between items-center sticky top-0 z-1111111111111111  p-5">
         <img src={product_page_logo} alt="" />
         <div className="hidden lg:flex items-center gap-x-[25px]">
         <ActiveLink to="/">Home</ActiveLink>
@@ -73,7 +73,7 @@ function ProductHeader() {
         {
           
            
-           <div className={`${showHeaderSidebar ? 'flex flex-col rightSideBarMobile bg-white z-1111111111111111 items-center gap-x-[25px]':"hidden"}`}>
+           <div className={`${showHeaderSidebar ? 'flex flex-col top-0 rightSideBarMobile bg-white z-1111111111111111 items-center gap-x-[25px]':"hidden"}`}>
            
           <ActiveLink to="/">Home</ActiveLink>
           <ActiveLink to="/products">Products</ActiveLink>

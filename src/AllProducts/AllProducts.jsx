@@ -5,6 +5,7 @@ import Sidebar from '../SideBar/SideBar';
 import Pagination from 'react-js-pagination';
 import { ProductsContext } from '../ContextAPI/ProductProvider';
 import './Pagination.css';
+import Footer from '../Footer';
 
 function AllProducts() {
   const { products, chairType, type, filteredProducts, setFilteredProducts } = useContext(ProductsContext);
@@ -67,6 +68,7 @@ function AllProducts() {
           disabledClass="disabled"
         />
       </div>
+      <Footer/>
     </>
   );
 }

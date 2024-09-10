@@ -4,6 +4,7 @@ import {CartContext} from './CartProvider'
 
 import { AuthenticationContext } from '../ContextAPI/AuthenticationProvider';
 import {ProductsContext} from '../ContextAPI/ProductProvider';
+import Footer from '../Footer';
 
 function Cart() {
     const [subTotal,setSubTotal]=useState(0)
@@ -76,6 +77,7 @@ function Cart() {
            
           
         </div>
+        <Footer/>
         </>
     )
    
