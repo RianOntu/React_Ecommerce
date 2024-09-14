@@ -65,6 +65,7 @@ const handleAppleSignIn=()=>{
           }
             
             </div>
+            
             <div className="tickdiv mt-3 flex items-center">
               <input type="checkbox" className="cursor-pointer" />
               <h4 className="text-start ml-2 font-semibold">
